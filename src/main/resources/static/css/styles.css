@@ -1,0 +1,13 @@
+*{
+    box-shadow: blue;
+}
+.employee-card{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    border: solid;
+    padding: 20px;
+}
+.title{
+    text-align: center;
+}

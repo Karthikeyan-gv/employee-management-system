@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+    <link rel="stylesheet" th:href="@{/css/employees.css}">
+</head>
+
+<body>
+    <div class="employee-card">
+        <h1 class="title">Employees</h1>
+        <div class="top-buttons">
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/add-employee}">Add</a>
+</div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="employee : ${employees}">
+                    <td th:text="${employee.id}"></td>
+                    <td th:text="${employee.name}"></td>
+                    <td th:text="${employee.gender}"></td>
+                    <td th:text="${employee.email}"></td>
+                    <td th:text="${employee.phone}"></td>
+                    <td th:text="${employee.salary}"></td>
+                    <td>
+                        <div class="action-buttons">
+                            <a class="btn update-btn" th:href="@{/update-employee/{id}(id=${employee.id})}">Update</a>
+                            <form th:action="@{/employee/delete/{id}(id=${employee.id})}" method="post">
+                                <input type="hidden" name="_method" value="delete" />
+                                <button type="submit" class="btn delete-btn">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Employeemgmt.k</title>
+    <link rel="stylesheet" th:href="@{/css/find-employee.css}">
+</head>
+
+<body>
+    <h1>Find Employee</h1>
+    <p>Search by any one of the criteria below:</p> <!--small message for user -->
+    <div class="form-section">
+    <form th:action="@{/find-employee}" th:object="${employee}" method="get">
+        <input type="number" name="id" th:value="${param.id}" placeholder="Find by id">
+        <br>
+        <input type="text" name="name" th:value="${param.name}" placeholder="Find by name">
+        <br>
+        <input type="text" name="gender" th:value="${param.gender}" placeholder="Find by gender">
+        <br>
+        <input type="text" name="email" th:value="${param.email}" placeholder="Find by email">
+        <br>
+        <input type="text" name="phone" th:value="${param.phone}" placeholder="Find by phone">
+        <br>
+        <input type="text" name="salary" th:value="${param.salary}" placeholder="Find by salary">
+        <br>
+        <button type="submit">Find</button>        
+        <a th:href="@{/}">Cancel</a>
+    </form>
+    </div>
+    <div th:unless="${#lists.isEmpty(employees)}">
+        <h3>Available Employees:</h3>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="employee : ${employees}">
+                    <td th:text="${employee.id}"></td>
+                    <td th:text="${employee.name}"></td>
+                    <td th:text="${employee.gender}"></td>
+                    <td th:text="${employee.email}"></td>
+                    <td th:text="${employee.phone}"></td>
+                    <td th:text="${employee.salary}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <!-- error message -->
+     <div class="error-msg" th:if="${#lists.isEmpty(employees)}">
+         <p >no employees found !</p>
+     </div>
+</body>
+
+</html>

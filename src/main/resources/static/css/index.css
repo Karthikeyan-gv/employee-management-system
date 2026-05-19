@@ -1,0 +1,93 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  gap: 15px;
+}
+
+/* =========================
+   TITLE
+========================= */
+h1 {
+  font-size: 2rem;
+  color: #4f8cff;
+
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* =========================
+   LINKS AS BUTTONS
+========================= */
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 220px;
+  height: 50px;
+
+  background-color: #1f4690;
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  border-radius: 8px;
+
+  transition: 0.3s ease;
+}
+
+/* Hover */
+a:hover {
+  background-color: #16356d;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   SEPARATION BETWEEN LINKS (<br> fix visually)
+========================= */
+br {
+  display: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+
+  a {
+    width: 100%;
+    max-width: 280px;
+    height: 45px;
+
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}

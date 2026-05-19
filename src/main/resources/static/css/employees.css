@@ -1,0 +1,306 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.employee-card {
+  width: 100%;
+  max-width: 1100px;
+
+  background-color: #1e1e1e;
+
+  padding: 25px;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+
+  overflow-x: auto;
+}
+
+/* =========================
+   TITLE
+========================= */
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4f8cff;
+
+  margin-bottom: 25px;
+}
+
+/* =========================
+   TOP BUTTONS
+========================= */
+
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.top-buttons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 140px;
+  height: 50px;
+
+  background-color: #1f4690;
+  color: #fff;
+
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.top-buttons a:hover {
+  background-color: #16356d;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+  width: 100%;
+  min-width: 700px;
+
+  border-collapse: collapse;
+
+  margin-top: 15px;
+
+  font-size: 0.95rem;
+}
+
+/* Table Header */
+thead {
+  background-color: #1f4690;
+  color: #fff;
+}
+
+th {
+  padding: 14px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+/* Table Data */
+td {
+  padding: 14px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+/* Alternate Row Colors */
+tbody tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+tbody tr:hover {
+  background-color: #333;
+  transition: 0.2s ease;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* Remove form spacing */
+.action-buttons form {
+  margin: 0;
+  padding: 0;
+}
+
+/* SAME SIZE FOR BOTH BUTTONS */
+.action-buttons .btn,
+.action-buttons button.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 140px;
+  height: 50px;
+
+  border: none;
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition: 0.3s ease;
+}
+
+/* Update Button */
+.update-btn {
+  background-color: #1f4690;
+}
+
+.update-btn:hover {
+  background-color: #16356d;
+  transform: translateY(-1px);
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #c81d25;
+}
+
+.delete-btn:hover {
+  background-color: #921419;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   TABLE SCROLLBAR
+========================= */
+
+.employee-card::-webkit-scrollbar {
+  height: 8px;
+}
+
+.employee-card::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 5px;
+}
+
+.employee-card::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .employee-card {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 12px;
+  }
+
+  .top-buttons a {
+    width: 130px;
+    height: 46px;
+    font-size: 0.95rem;
+  }
+
+  .action-buttons .btn,
+  .action-buttons button.btn {
+    width: 130px;
+    height: 46px;
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .employee-card {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .top-buttons {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .top-buttons a {
+    width: 120px;
+    height: 42px;
+    font-size: 0.9rem;
+  }
+
+  table {
+    min-width: 650px;
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  .action-buttons {
+    gap: 8px;
+  }
+
+  .action-buttons .btn,
+  .action-buttons button.btn {
+    width: 120px;
+    height: 42px;
+    font-size: 0.9rem;
+  }
+}
